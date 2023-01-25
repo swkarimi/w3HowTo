@@ -1,0 +1,50 @@
+body {
+  margin: 1rem;
+}
+
+:root {
+  --len: 5px;
+}
+
+.h-icon {
+  width: calc(7 * var(--len));
+  height: calc(5 * var(--len));
+  cursor: pointer;
+  position: relative;
+}
+
+.h-icon span {
+  position: absolute;
+  width: 100%;
+  height: var(--len);
+  background-color: black;
+  left: 0;
+  border-radius: var(--len);
+  transition: 0.2s;
+}
+
+.h-icon .h-icon__line1 {
+  top: 0;
+}
+
+.h-icon .h-icon__line2 {
+  top: calc(2 * var(--len));
+}
+
+.h-icon .h-icon__line3 {
+  top: calc(4 * var(--len));
+}
+
+.h-icon.active .h-icon__line1 {
+  top: calc(2 * var(--len));
+  transform: rotate(-45deg);
+}
+
+.h-icon.active .h-icon__line2 {
+  opacity: 0;
+}
+
+.h-icon.active .h-icon__line3 {
+  top: calc(2 * var(--len));
+  transform: rotate(45deg);
+}
